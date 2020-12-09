@@ -5,17 +5,18 @@ import Avatar from "@material-ui/core/Avatar";
 function Post() {
   return (
     <div className="post">
-      <Avatar
-        className="post__avatar"
-        alt=""
-        // src="/static/images/avatar/1.jpg"
-      />
-      <h3>Username</h3>
+      <div className="post__header">
+        <Avatar
+          className="post__avatar"
+          alt="DeanHildebrand"
+          src="/static/images/avatar/1.jpg"
+        />
+        <h3>Username</h3>
+      </div>
 
       <img
         className="post__image"
         src="https://miro.medium.com/max/2400/1*jDIj2SKAE-Bp32owLoHDjw.png"
-        alt=""
       />
 
       <h4 className="post__text">
