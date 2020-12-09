@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Post from "./components/Post";
 
 function App() {
+  const [posts, setPosts] = useState([
+    {
+      imageUrl: "https://miro.medium.com/max/2400/1*jDIj2SKAE-Bp32owLoHDjw.png",
+      username: "deanhildebrand",
+      caption: "passing down props",
+    },
+    {
+      imageUrl: "https://miro.medium.com/max/2400/1*jDIj2SKAE-Bp32owLoHDjw.png",
+      username: "deanhildebrand",
+      caption: "passing down props",
+    },
+  ]);
   return (
     <div className="app">
       <div className="app__header">
@@ -11,21 +23,13 @@ function App() {
           alt=""
         />
       </div>
-
-      <Post
-        imageUrl="https://miro.medium.com/max/2400/1*jDIj2SKAE-Bp32owLoHDjw.png"
-        username="deanhildebrand"
-        caption="passing down props"
-      />
-      <Post
-        imageUrl="https://miro.medium.com/max/2400/1*jDIj2SKAE-Bp32owLoHDjw.png"
-        username="atully"
-        caption="love you xxx"
-      />
-      <Post
-        imageUrl="https://miro.medium.com/max/2400/1*jDIj2SKAE-Bp32owLoHDjw.png"
-        username="joeyt1987"
-        caption="sick app bro"
+      {posts.map((post) => (
+        <Post
+          username={post.username}
+          imageUrl={post.imageUrl}
+          caption={post.caption}
+        />
+      ))}
       />
     </div>
   );
