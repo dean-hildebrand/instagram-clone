@@ -12,3 +12,13 @@
   border-bottom: 1px solid lightgrey;
   object-fit: contain;
 }
+
+.app__signup > center {
+display: flex;
+flex-direction: column;
+}
+
+.app__headerImage {
+  object-fit: contain;
+  margin-bottom: 5px;
+}
