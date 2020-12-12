@@ -5,6 +5,7 @@ import { db, auth } from "./firebase";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import { Button, Input } from "@material-ui/core";
+import { AlternateEmail } from "@material-ui/icons";
 
 function getModalStyle() {
   const top = 50;
@@ -82,10 +83,17 @@ function App() {
         });
       })
       .catch((error) => alert(error.message));
+    setOpen(false);
   };
 
   const signIn = (e) => {
     e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .catch((error) => alert(error.message));
+
+    setOpenSignIn(false);
   };
 
   return (
